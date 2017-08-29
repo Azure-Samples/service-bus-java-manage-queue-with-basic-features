@@ -4,7 +4,7 @@ platforms: java
 author: anudeepsharma
 ---
 
-#Getting Started with Servicebus - Service Bus Queue Basic - in Java #
+## Getting Started with Servicebus - Service Bus Queue Basic - in Java ##
 
 
   Azure Service Bus basic scenario sample.
@@ -36,7 +36,7 @@ Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an aut
 
 ## More information ##
 
-[http://azure.com/java] (http://azure.com/java)
+[http://azure.com/java](http://azure.com/java)
 
 If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
 

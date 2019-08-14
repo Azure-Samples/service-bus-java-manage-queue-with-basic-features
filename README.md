@@ -1,7 +1,9 @@
 ---
 page_type: sample
-languages: java
-products: azure
+languages:
+- java
+products:
+- azure
 services: Servicebus
 platforms: java
 author: yaohaizh

@@ -4,12 +4,12 @@ languages:
 - java
 products:
 - azure
-services: Servicebus
-platforms: java
-author: yaohaizh
+extensions:
+- services: Servicebus
+- platforms: java
 ---
 
-## Getting Started with Servicebus - Service Bus Queue Basic - in Java ##
+# Getting Started with Servicebus - Service Bus Queue Basic - in Java #
 
 
   Azure Service Bus basic scenario sample.

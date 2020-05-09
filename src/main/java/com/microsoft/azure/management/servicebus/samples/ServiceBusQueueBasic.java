@@ -6,6 +6,9 @@
 
 package com.microsoft.azure.management.servicebus.samples;
 
+import com.azure.messaging.servicebus.ServiceBusClientBuilder;
+import com.azure.messaging.servicebus.ServiceBusMessage;
+import com.azure.messaging.servicebus.ServiceBusSenderClient;
 import com.microsoft.azure.PagedList;
 import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.resources.fluentcore.arm.Region;
@@ -18,13 +21,10 @@ import com.microsoft.azure.management.servicebus.Policykey;
 import com.microsoft.azure.management.servicebus.Queue;
 import com.microsoft.azure.management.servicebus.ServiceBusNamespace;
 import com.microsoft.rest.LogLevel;
-import com.microsoft.windowsazure.Configuration;
-import com.microsoft.windowsazure.services.servicebus.ServiceBusConfiguration;
-import com.microsoft.windowsazure.services.servicebus.ServiceBusContract;
-import com.microsoft.windowsazure.services.servicebus.ServiceBusService;
-import com.microsoft.windowsazure.services.servicebus.models.BrokeredMessage;
 
 import java.io.File;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Azure Service Bus basic scenario sample.
@@ -150,10 +150,13 @@ public final class ServiceBusQueueBasic {
             //=============================================================
             // Send a message to queue.
             try {
-                Configuration config = Configuration.load();
-                config.setProperty(ServiceBusConfiguration.CONNECTION_STRING, keys.primaryConnectionString());
-                ServiceBusContract service = ServiceBusService.create(config);
-                service.sendQueueMessage(queue1Name, new BrokeredMessage("Hello World"));
+                ServiceBusMessage message = new ServiceBusMessage("Hello World".getBytes(UTF_8));
+                ServiceBusSenderClient serviceBusSenderClient = new ServiceBusClientBuilder()
+                .connectionString(keys.primaryConnectionString())
+                .sender()
+                .queueName(queue1Name)
+                .buildClient();;
+                serviceBusSenderClient.send(message);
             }
             catch (Exception ex) {
             }

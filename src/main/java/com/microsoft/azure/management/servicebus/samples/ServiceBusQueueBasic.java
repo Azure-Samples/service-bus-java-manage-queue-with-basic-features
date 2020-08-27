@@ -156,7 +156,7 @@ public final class ServiceBusQueueBasic {
                 .sender()
                 .queueName(queue1Name)
                 .buildClient();;
-                serviceBusSenderClient.send(message);
+                serviceBusSenderClient.sendMessage(message);
             }
             catch (Exception ex) {
             }

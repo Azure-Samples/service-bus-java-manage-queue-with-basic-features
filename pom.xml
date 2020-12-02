@@ -15,15 +15,16 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-          <mainClass>com.microsoft.azure.management.servicebus.samples.ServiceBusQueueBasic</mainClass>
+          <mainClass>com.azure.resourcemanager.servicebus.samples.ServiceBusQueueBasic</mainClass>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.0</version>
+        <version>3.8.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
@@ -40,7 +41,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>com.microsoft.azure.management.servicebus.samples.ServiceBusQueueBasic.java</mainClass>
+                  <mainClass>com.azure.resourcemanager.servicebus.samples.ServiceBusQueueBasic.java</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -51,39 +52,24 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-servicebus</artifactId>
-      <version>0.9.7</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>jsr311-api</artifactId>
-          <groupId>javax.ws.rs</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>httpclient</artifactId>
-          <groupId>org.apache.httpcomponents</groupId>
-        </exclusion>
-      </exclusions>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager</artifactId>
+      <version>2.1.0</version>
     </dependency>
     <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure</artifactId>
-      <version>1.36.3</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity</artifactId>
+      <version>1.2.0</version>
     </dependency>
     <dependency>
       <groupId>commons-net</groupId>
       <artifactId>commons-net</artifactId>
-      <version>3.3</version>
+      <version>3.6</version>
     </dependency>
     <dependency>
-      <groupId>commons-lang</groupId>
-      <artifactId>commons-lang</artifactId>
-      <version>2.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.7</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-messaging-servicebus</artifactId>
+      <version>7.0.0-beta.7</version>
     </dependency>
   </dependencies>
 </project>

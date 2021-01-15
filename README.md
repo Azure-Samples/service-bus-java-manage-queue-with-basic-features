@@ -5,8 +5,8 @@ languages:
 products:
 - azure
 extensions:
-  services: Servicebus
-  platforms: java
+- services: Servicebus
+- platforms: java
 ---
 
 # Getting Started with Servicebus - Service Bus Queue Basic - in Java #
